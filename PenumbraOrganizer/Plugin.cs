@@ -3,6 +3,7 @@ using Dalamud.Interface.Windowing;
 using Dalamud.IoC;
 using Dalamud.Plugin;
 using Dalamud.Plugin.Services;
+using PenumbraOrganizer.IPC;
 using PenumbraOrganizer.Windows;
 
 namespace PenumbraOrganizer;
@@ -20,14 +21,18 @@ public sealed class Plugin : IDalamudPlugin
 
     public Configuration Configuration { get; init; }
 
+    public PenumbraIPC PenumbraIPC { get; init; }
+
     public readonly WindowSystem WindowSystem = new("PenumbraOrganizer");
     private ConfigWindow ConfigWindow { get; init; }
     private MainWindow MainWindow { get; init; }
 
+    
+
     public Plugin()
     {
         Configuration = PluginInterface.GetPluginConfig() as Configuration ?? new Configuration();
-
+        PenumbraIPC = new PenumbraIPC(PluginInterface, Log);
         ConfigWindow = new ConfigWindow(this);
         MainWindow = new MainWindow(this);
 

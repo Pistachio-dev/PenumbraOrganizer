@@ -29,6 +29,9 @@ public class MainWindow : Window, IDisposable
 
     public override void Draw()
     {
-        ImGui.TextUnformatted("wip");
+        if (ImGui.Button("Print mod list"))
+        {
+            Plugin.PenumbraIPC.GetModList();
+        }
     }
 }
