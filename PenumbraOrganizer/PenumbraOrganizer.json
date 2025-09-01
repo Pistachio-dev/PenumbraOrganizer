@@ -1,0 +1,17 @@
+{
+  "Author": "Pistachio Herald",
+  "Name": "Penumbra Organizer",
+  "Punchline": "Organize and tag your mods based on what they modify.",
+  "Description": "Organize and tag your mods based on what they modify. Type /penorg to open",
+  "ApplicableVersion": "any",
+  "InternalName": "PenumbraOrganizer",
+  "Tags": [
+    "penumbra",
+    "organizer",
+    "sort",
+    "tag",
+    "clean",
+    "mods",
+    "mod loader"
+  ]
+}
